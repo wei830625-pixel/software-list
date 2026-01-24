@@ -60,12 +60,75 @@
       "url": "https://awesun.aweray.com/en/olddown/windows"},	 
 	  
 	  
-	{"name": "Deskskin",
-      "icon": "Deskskin.png",
+	{"name": "Deskin",
+      "icon": "Deskin.png",
       "url": "https://deskin.io/zh/download/deskin-personal"}
 
-     ]	  
+     ],
+	 
+	 
+	   "開發者工具": [
+  
+    {"name": "Python",
+      "icon": "Python.png",
+      "url": "https://www.python.org/downloads/"},
 	  
+    {"name": "Notepad++",
+      "icon": "Notepad++.png",
+      "url": "https://notepad-plus-plus.org/downloads/"},
+	  
+    {"name": "Ubuntu",
+      "icon": "Ubuntu.png",
+      "url": "https://ubuntu.com/desktop/wsl"}
+	  
+     ],
+	  
+	  
+   "社群工具": [
+  
+    {"name": "LINE",
+      "icon": "LINE.png",
+      "url": "https://www.linebbn.com/"},
+	  
+    {"name": "Discord",
+      "icon": "Discord.png",
+      "url": "https://discord.com/download"},	  
+
+    {"name": "Steam",
+      "icon": "Steam.png",
+      "url": "https://store.steampowered.com/about/"},
+	  
+    {"name": "微信",
+      "icon": "微信.png",
+      "url": "https://windows.weixin.qq.com/?lang=zh_CN"},	 
+	  
+	  
+	{"name": "WhatsApp",
+      "icon": "WhatsApp.png",
+      "url": "https://www.whatsapp.com/download?lang=zh-tw"},
+	  
+    {"name": "Telegram",
+      "icon": "Telegram.png",
+      "url": "https://desktop.telegram.org/"},	 
+	  
+	{"name": " Zoom",
+      "icon": " Zoom.png",
+      "url": "https://support.zoom.com/hc/zt/article?id=zm_kb&sysparm_article=KB0060421"},
+
+     ],
+	 
+	 
+  "其他": [
+  
+    {"name": "PixPin",
+      "icon": "PixPin.png",
+      "url": "https://pixpin.cn/"},
+	  
+    {"name": "PotPlayer",
+      "icon": "PotPlayer.png",
+      "url": "https://potplayer.tv/?lang=zh_TW"}
+	  
+     ]
   
   
   
