@@ -1,22 +1,76 @@
 {
   "瀏覽器": [
-    {
-      "name": "Google Chrome",
+    
+      {"name": "Google Chrome",
       "icon": "chrome.png",
-      "url": "https://www.google.com/chrome/"
-    },
-	 {
-      "name": "Edge",
+      "url": "https://www.google.com/chrome/"},
+   
+	
+	{"name": "Edge",
       "icon": "Edge.png",
-      "url": "https://www.microsoft.com/zh-tw/edge/download?form=MA13FJ"
-    }
-  ],
+      "url": "https://www.microsoft.com/zh-tw/edge/download?form=MA13FJ"},
+	
+	{"name": "Brave",
+      "icon": "Brave.png",
+      "url": "https://brave.com/zh-tw/download/"},
+	
+	{"name": "Brave",
+      "icon": "Brave.png",
+      "url": "https://brave.com/zh-tw/download/"},
+	  
+	{"name": "Opera",
+      "icon": "Opera.png",
+      "url": "https://www.opera.com/zh-cn"},
+	
+	{"name": "Firefox",
+      "icon": "Firefox.png",
+      "url": "https://www.firefox.com/zh-TW/?utm_campaign=SET_DEFAULT_BROWSER"}
+	
+     ],
 
-  "工具": [
-    {
-      "name": "7-Zip",
+  "解壓縮工具": [
+  
+    {"name": "WinRAR",
+      "icon": "WinRAR.png",
+      "url": "https://rar.tw/index.html"},
+	  
+    {"name": "7-Zip",
       "icon": "7zip.png",
-      "url": "https://www.7-zip.org/"
-    }
-  ]
+      "url": "https://www.7-zip.org/"},	  
+	  
+     ],
+  
+   "遠端工具": [
+  
+    {"name": "AnyDesk",
+      "icon": "AnyDesk.png",
+      "url": "https://anydesk.com/zh-tw/downloads/windows"},
+	  
+    {"name": "TeamViewer",
+      "icon": "TeamViewer.png",
+      "url": "https://www.teamviewer.com/tw/download/windows/"},	  
+
+    {"name": "AweSun(新)",
+      "icon": "AweSun(新).png",
+      "url": "https://awesun.aweray.com/zh-hant/download"},
+	  
+    {"name": "AweSun(舊)",
+      "icon": "AweSun(舊).png",
+      "url": "https://awesun.aweray.com/en/olddown/windows"},	 
+	  
+	  
+	{"name": "Deskskin",
+      "icon": "Deskskin.png",
+      "url": "https://deskin.io/zh/download/deskin-personal"}
+
+     ],	  
+	  
+  
+  
+  
+  
+  
+  
+  
+  
 }
