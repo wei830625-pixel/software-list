@@ -4,6 +4,11 @@
       "name": "Google Chrome",
       "icon": "chrome.png",
       "url": "https://www.google.com/chrome/"
+    },
+	 {
+      "name": "Edge",
+      "icon": "Edge.png",
+      "url": "https://www.google.com/intl/zh-TW/chrome/"
     }
   ],
 
