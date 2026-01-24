@@ -102,7 +102,6 @@
       "icon": "微信.png",
       "url": "https://windows.weixin.qq.com/?lang=zh_CN"},	 
 	  
-	  
 	{"name": "WhatsApp",
       "icon": "WhatsApp.png",
       "url": "https://www.whatsapp.com/download?lang=zh-tw"},
@@ -113,7 +112,7 @@
 	  
 	{"name": " Zoom",
       "icon": " Zoom.png",
-      "url": "https://support.zoom.com/hc/zt/article?id=zm_kb&sysparm_article=KB0060421"},
+      "url": "https://support.zoom.com/hc/zt/article?id=zm_kb&sysparm_article=KB0060421"}
 
      ],
 	 
