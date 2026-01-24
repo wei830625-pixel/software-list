@@ -1,0 +1,17 @@
+{
+  "瀏覽器": [
+    {
+      "name": "Google Chrome",
+      "icon": "chrome.png",
+      "url": "https://www.google.com/chrome/"
+    }
+  ],
+
+  "工具": [
+    {
+      "name": "7-Zip",
+      "icon": "7zip.png",
+      "url": "https://www.7-zip.org/"
+    }
+  ]
+}
