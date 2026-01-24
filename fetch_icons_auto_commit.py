@@ -5,7 +5,6 @@ from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 from datetime import datetime
 
-# 路徑
 APPS_JSON = "apps.json"
 ICONS_DIR = "icons"
 
@@ -19,8 +18,14 @@ for category, apps in data.items():
     for app in apps:
         url = app["url"]
         icon_name = app["icon"]
-        print(f"處理 {app['name']} ...")
+        icon_path = os.path.join(ICONS_DIR, icon_name)
 
+        # 如果檔案已存在，跳過下載
+        if os.path.exists(icon_path):
+            print(f"已存在，跳過 {app['name']}")
+            continue
+
+        print(f"處理 {app['name']} ...")
         try:
             r = requests.get(url, timeout=5)
             soup = BeautifulSoup(r.text, "html.parser")
@@ -34,11 +39,10 @@ for category, apps in data.items():
             if r_icon.status_code != 200:
                 raise Exception("抓不到圖示，跳過")
 
-            filename = os.path.join(ICONS_DIR, icon_name)
-            with open(filename, "wb") as f_icon:
+            with open(icon_path, "wb") as f_icon:
                 f_icon.write(r_icon.content)
 
-            print(f"成功下載 {filename}")
+            print(f"成功下載 {icon_path}")
 
         except Exception as e:
             print(f"跳過 {app['name']}: {e}")
