@@ -214,7 +214,11 @@
 
     {"name": "CrossMark",
       "icon": "CrossMark.png",
-      "url": "https://bapco.com/crossmark/"}
+      "url": "https://bapco.com/crossmark/"},
+	  
+    {"name": "novabench",
+      "icon": "novabench.png",
+      "url": "https://novabench.com/zh-tw"},
 
      ]
   
