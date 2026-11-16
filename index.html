@@ -1,127 +1,174 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <title>重灌必裝清單</title>
-
-  <style>
-    body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5efe6; /* 奶茶底 */
-      color: #4b3f35;
-      margin: 0;
-      padding: 28px;
-    }
-
-    h1 {
-      margin-bottom: 6px;
-    }
-
-    p {
-      margin-top: 0;
-      margin-bottom: 24px;
-      color: #6b5c50;
-    }
-
-    /* === 類別外層：橫向排列 === */
-    .categories {
-      display: flex;
-      flex-wrap: wrap;     /* 關鍵 */
-      gap: 20px;
-    }
-
-    /* === 每個類別卡片 === */
-    .category-card {
-      background: #fffaf3;
-      border-radius: 16px;
-      padding: 16px 18px;
-      min-width: 220px;
-      max-width: 260px;
-      flex: 1 1 220px;     /* 視窗變化自動重排 */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    }
-
-    .category-card h2 {
-      margin: 0 0 12px 0;
-      font-size: 16px;
-      border-bottom: 2px solid #e6dccd;
-      padding-bottom: 6px;
-      color: #3f342c;
-    }
-
-    /* === 類別內：縱向清單 === */
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    li {
-      display: flex;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-
-    li:last-child {
-      margin-bottom: 0;
-    }
-
-    li img {
-      width: 18px;
-      height: 18px;
-      margin-right: 8px;
-      flex-shrink: 0;
-    }
-
-    li a {
-      color: #4b3f35;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    li a:hover {
-      text-decoration: underline;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f5efe6">
+<title>Hank 的電腦工具箱</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+:root{color-scheme:light;--bg:#f5efe6;--card:#fffdf9;--ink:#382f27;--muted:#817468;--line:#e5dbce;--accent:#71573e}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"DM Sans","Noto Sans TC",sans-serif}
+button,input{font:inherit}
+button,a,input{-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ab7e4c;outline-offset:4px}
+.shell{max-width:1440px;margin:auto;padding:48px 40px}
+header{display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:22px;gap:20px}
+.brand{font-weight:700;font-size:18px;letter-spacing:.02em}
+.repo{font-size:13px;text-decoration:none;color:var(--muted)}
+.hero{padding:52px 0 32px;display:flex;justify-content:space-between;align-items:flex-end;gap:24px}
+h1{font-size:clamp(30px,4vw,46px);letter-spacing:-.04em;margin:0 0 12px;line-height:1.25}
+.hero p{color:var(--muted);margin:0;line-height:1.8;font-size:14px}
+.total{font-size:13px;color:var(--muted);white-space:nowrap}
+.total strong{font-size:36px;color:var(--accent);margin-right:6px}
+.searchbox{position:relative;max-width:680px;margin-bottom:34px}
+input{width:100%;border:1px solid var(--line);border-radius:14px;padding:17px 52px 17px 20px;background:var(--card);color:var(--ink)}
+input::placeholder{color:var(--muted)}
+.clear{position:absolute;right:12px;top:9px;width:36px;height:36px;border:0;border-radius:8px;background:transparent;color:var(--muted);cursor:pointer}
+.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:38px}
+nav{position:sticky;top:24px;align-self:start;display:flex;flex-direction:column;gap:5px}
+.filter{border:0;background:transparent;text-align:left;padding:12px 14px;border-radius:10px;color:var(--muted);cursor:pointer;display:flex;justify-content:space-between;gap:12px;font-size:13px}
+.filter:hover{background:#ece2d5}
+.filter[aria-pressed="true"]{background:var(--ink);color:#fffaf3}
+.count{opacity:.65;font-size:12px}
+section{margin-bottom:32px}
+.section-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
+h2{font-size:17px;margin:0;font-weight:600}
+.section-head span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.tool{display:flex;align-items:flex-start;gap:13px;padding:20px 16px;min-height:108px;border:1px solid #e9e0d5;background:var(--card);border-radius:14px;text-decoration:none;transition:transform .16s,box-shadow .16s,border-color .16s}
+.tool:hover{transform:translateY(-3px);border-color:#cdb99f;box-shadow:0 8px 20px #58432d0c}
+.icon{width:36px;height:36px;flex:none;display:grid;place-items:center;border-radius:10px;background:#f0e7db;color:var(--accent);font-size:17px;font-weight:700;overflow:hidden}
+.icon img{width:24px;height:24px;object-fit:contain}
+.info{min-width:0;flex:1}
+.name{font-size:14px;font-weight:600;line-height:1.5;overflow-wrap:anywhere}
+.description{color:var(--muted);font-size:12px;line-height:1.65;margin-top:5px;overflow-wrap:anywhere}
+.arrow{color:#a99a88;font-size:15px}
+#status{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:20px}
+#status:empty{display:none}
+footer{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;line-height:1.8}
+@media(min-width:1280px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.layout{grid-template-columns:180px minmax(0,1fr);gap:24px}.shell{padding:32px 24px}}
+@media(max-width:640px){.shell{padding:24px 18px}.hero{padding:36px 0 24px}.total{display:none}.layout{display:block}nav{position:static;flex-direction:row;overflow-x:auto;margin:0 -18px 24px;padding:0 18px 10px;gap:6px}.filter{white-space:nowrap;flex:none;border:1px solid var(--line);padding:10px 12px}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.tool{padding:15px 12px;gap:9px;flex-wrap:wrap}.icon{width:30px;height:30px}.info{flex-basis:calc(100% - 39px)}.arrow{display:none}.name{font-size:13px}.description{font-size:11px}.repo{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.tool{transition:none}.tool:hover{transform:none}}
+</style>
 </head>
 <body>
-
-<h1>🧰 電腦重灌工具箱</h1>
-<p>又偉世界大帥哥 ☕</p>
-
-<div id="app" class="categories"></div>
-
+<div class="shell">
+<header><div class="brand">Hank’s Toolbox<span aria-hidden="true"> ☕</span></div><a class="repo" href="https://github.com/wei830625-pixel/software-list" target="_blank" rel="noopener noreferrer">GitHub ↗</a></header>
+<div class="hero"><div><h1>好用工具，隨手就有。</h1><p>電腦重灌、網路維運與日常工作，用得到的都收在這裡。</p></div><div class="total"><strong id="total">—</strong> 個工具</div></div>
+<div class="searchbox"><label for="search" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">搜尋工具</label><input id="search" type="search" placeholder="搜尋軟體、用途或分類…" autocomplete="off"><button id="clear" class="clear" aria-label="清除搜尋" hidden>×</button></div>
+<div class="layout"><nav id="categories" aria-label="工具分類"></nav><main><div id="status" role="status" aria-live="polite">正在載入工具清單…</div><div id="app"></div></main></div>
+<footer>又偉世界大帥哥 ☕<br>點選工具可前往下載或產品頁面，授權方式與系統需求請以各工具官網為準。</footer>
+</div>
 <script>
-fetch('apps.json')
-  .then(res => res.json())
-  .then(data => {
-    const app = document.getElementById('app');
-
-    for (const category in data) {
-      const card = document.createElement('div');
-      card.className = 'category-card';
-
-      const h2 = document.createElement('h2');
-      h2.textContent = category;
-      card.appendChild(h2);
-
-      const ul = document.createElement('ul');
-
-      data[category].forEach(item => {
-        const li = document.createElement('li');
-        li.innerHTML = `
-          <img src="icons/${item.icon}" alt="">
-          <a href="${item.url}" target="_blank">${item.name}</a>
-        `;
-        ul.appendChild(li);
-      });
-
-      card.appendChild(ul);
-      app.appendChild(card);
+'use strict';
+let data = {};
+let selected = '全部工具';
+const app = document.getElementById('app');
+const search = document.getElementById('search');
+const status = document.getElementById('status');
+const clear = document.getElementById('clear');
+const nav = document.getElementById('categories');
+function toolCard(item) {
+  const link = document.createElement('a');
+  link.className = 'tool';
+  let url;
+  try { url = new URL(item.url); } catch { return null; }
+  if (!['https:', 'http:'].includes(url.protocol)) return null;
+  link.href = url.href;
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  const icon = document.createElement('span');
+  icon.className = 'icon';
+  icon.setAttribute('aria-hidden', 'true');
+  icon.textContent = item.name.trim().slice(0, 1).toUpperCase();
+  if (item.icon && !item.description) {
+    const img = document.createElement('img');
+    img.alt = '';
+    img.src = 'icons/' + encodeURIComponent(item.icon);
+    img.onload = () => icon.replaceChildren(img);
+  }
+  const info = document.createElement('div');
+  info.className = 'info';
+  const name = document.createElement('div');
+  name.className = 'name';
+  name.textContent = item.name.trim();
+  const description = document.createElement('div');
+  description.className = 'description';
+  description.textContent = item.description || url.hostname.replace(/^www\./, '');
+  info.append(name, description);
+  const arrow = document.createElement('span');
+  arrow.className = 'arrow';
+  arrow.textContent = '↗';
+  arrow.setAttribute('aria-hidden', 'true');
+  link.append(icon, info, arrow);
+  return link;
+}
+function render() {
+  const query = search.value.trim().toLocaleLowerCase();
+  clear.hidden = !search.value;
+  app.replaceChildren();
+  let visible = 0;
+  for (const [category, items] of Object.entries(data)) {
+    if (selected !== '全部工具' && selected !== category) continue;
+    const matches = items.filter(item => [category, item.name, item.description || '', item.url].join(' ').toLocaleLowerCase().includes(query));
+    if (!matches.length) continue;
+    const section = document.createElement('section');
+    const heading = document.createElement('div');
+    heading.className = 'section-head';
+    const title = document.createElement('h2');
+    title.textContent = category;
+    const count = document.createElement('span');
+    count.textContent = matches.length + ' 個工具';
+    heading.append(title, count);
+    const grid = document.createElement('div');
+    grid.className = 'grid';
+    matches.forEach(item => { const card = toolCard(item); if (card) { grid.append(card); visible++; } });
+    section.append(heading, grid);
+    app.append(section);
+  }
+  status.textContent = visible ? (query ? '找到 ' + visible + ' 個工具' : '') : '找不到符合的工具，試試其他關鍵字或分類。';
+  nav.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === selected)));
+}
+search.addEventListener('input', render);
+clear.addEventListener('click', () => { search.value = ''; render(); search.focus(); });
+async function loadTools() {
+  try {
+    const response = await fetch('apps.json');
+    if (!response.ok) throw new Error('HTTP ' + response.status);
+    data = await response.json();
+    if (!data || Array.isArray(data) || typeof data !== 'object' || !Object.values(data).every(items => Array.isArray(items) && items.every(item => item && typeof item.name === 'string' && typeof item.url === 'string'))) throw new Error('Invalid tool list');
+    const total = Object.values(data).reduce((sum, items) => sum + items.length, 0);
+    document.getElementById('total').textContent = total;
+    for (const [category, count] of [['全部工具', total], ...Object.entries(data).map(([name, items]) => [name, items.length])]) {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'filter';
+      button.dataset.category = category;
+      button.append(document.createTextNode(category));
+      const badge = document.createElement('span');
+      badge.className = 'count';
+      badge.textContent = count;
+      button.append(badge);
+      button.addEventListener('click', () => { selected = category; render(); });
+      nav.append(button);
     }
-  })
-  .catch(err => console.error(err));
+    render();
+  } catch (error) {
+    status.replaceChildren(document.createTextNode('工具清單載入失敗。'));
+    const retry = document.createElement('button');
+    retry.type = 'button';
+    retry.className = 'filter';
+    retry.textContent = '重新載入';
+    retry.addEventListener('click', () => location.reload());
+    status.append(retry);
+    console.error(error);
+  }
+}
+loadTools();
 </script>
-
 </body>
 </html>
