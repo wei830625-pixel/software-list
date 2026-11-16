@@ -85,12 +85,32 @@ function toolCard(item) {
   icon.className = 'icon';
   icon.setAttribute('aria-hidden', 'true');
   icon.textContent = item.name.trim().slice(0, 1).toUpperCase();
-  if (item.icon && !item.description) {
-    const img = document.createElement('img');
-    img.alt = '';
-    img.src = 'icons/' + encodeURIComponent(item.icon);
-    img.onload = () => icon.replaceChildren(img);
+  const sources = [];
+  if (item.icon) sources.push('icons/' + encodeURIComponent(item.icon));
+  if (item.iconUrl) {
+    try {
+      const custom = new URL(item.iconUrl);
+      if (custom.protocol === 'https:') sources.push(custom.href);
+    } catch {}
   }
+  sources.push(
+    url.origin + '/favicon.ico',
+    'https://www.google.com/s2/favicons?sz=64&domain=' + encodeURIComponent(url.hostname),
+    'https://icons.duckduckgo.com/ip3/' + encodeURIComponent(url.hostname) + '.ico'
+  );
+  const img = document.createElement('img');
+  img.alt = '';
+  img.width = 24;
+  img.height = 24;
+  img.referrerPolicy = 'no-referrer';
+  img.decoding = 'async';
+  let sourceIndex = 0;
+  img.onload = () => icon.replaceChildren(img);
+  img.onerror = () => {
+    sourceIndex++;
+    if (sourceIndex < sources.length) img.src = sources[sourceIndex];
+  };
+  img.src = sources[sourceIndex];
   const info = document.createElement('div');
   info.className = 'info';
   const name = document.createElement('div');
