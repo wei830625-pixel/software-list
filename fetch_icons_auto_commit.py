@@ -27,7 +27,10 @@ with open(APPS_JSON, encoding="utf-8") as f:
 for category, apps in data.items():
     for app in apps:
         url = app["url"]
-        icon_name = app["icon"]
+        icon_name = app.get("icon")
+        if not icon_name:
+            print(f"使用線上圖示，跳過 {app['name']}")
+            continue
         icon_path = os.path.join(ICONS_DIR, icon_name)
 
         if os.path.exists(icon_path):
