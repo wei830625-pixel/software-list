@@ -168,6 +168,36 @@
       "name": "OpenShot",
       "icon": "OpenShot.png",
       "url": "https://www.openshot.org/zh-hant/download/"
+    },
+    {
+      "name": "Squoosh",
+      "url": "https://squoosh.app/",
+      "description": "網頁版・圖片壓縮、轉檔與前後畫質比較",
+      "iconUrl": "https://squoosh.app/c/favicon-c9cf50ef.ico"
+    },
+    {
+      "name": "Photopea",
+      "url": "https://www.photopea.com/",
+      "description": "網頁版・修圖、圖層與 PSD 編輯，提供免費使用",
+      "iconUrl": "https://www.photopea.com/promo/icon512.png"
+    },
+    {
+      "name": "OBS Studio",
+      "url": "https://obsproject.com/",
+      "description": "桌面版・免費開源錄影、直播與多來源畫面混合",
+      "iconUrl": "https://obsproject.com/favicon-32x32.png"
+    },
+    {
+      "name": "Audacity",
+      "url": "https://www.audacityteam.org/",
+      "description": "桌面版・免費開源錄音、剪輯與音訊格式轉換",
+      "iconUrl": "https://www.audacityteam.org/favicon.ico"
+    },
+    {
+      "name": "HandBrake",
+      "url": "https://handbrake.fr/",
+      "description": "桌面版・免費開源影片轉檔與壓縮",
+      "iconUrl": "https://handbrake.fr/favicon.ico"
     }
   ],
   "文書與辦公工具": [
@@ -415,6 +445,42 @@
       "url": "https://sqlitebrowser.org/dl/",
       "description": "檢視與編輯 SQLite 資料庫",
       "icon": "DB Browser for SQLite.png"
+    }
+  ],
+  "備份與裝置互傳": [
+    {
+      "name": "Syncthing",
+      "url": "https://syncthing.net/",
+      "description": "桌面版・開源工具，持續同步多台電腦的資料夾",
+      "iconUrl": "https://syncthing.net/img/favicon.png"
+    },
+    {
+      "name": "FreeFileSync",
+      "url": "https://freefilesync.org/",
+      "description": "桌面版・資料夾比對、同步與備份，另有捐贈及商用版本",
+      "iconUrl": "https://freefilesync.org/images/freefilesync.ico"
+    },
+    {
+      "name": "LocalSend",
+      "url": "https://localsend.org/",
+      "description": "桌面／手機版・免費開源，同區網跨裝置傳送檔案",
+      "iconUrl": "https://localsend.org/img/logo.png"
+    }
+  ],
+  "資料處理與轉換": [
+    {
+      "name": "CyberChef",
+      "url": "https://gchq.github.io/CyberChef/",
+      "description": "網頁版・開源資料轉換工具，處理 Base64、雜湊與時間戳",
+      "iconUrl": "https://gchq.github.io/CyberChef/assets/aecc661b69309290f600.ico"
+    }
+  ],
+  "白板與圖表": [
+    {
+      "name": "Excalidraw",
+      "url": "https://excalidraw.com/",
+      "description": "網頁版・開源手繪風白板，繪製流程圖、線框與草圖",
+      "iconUrl": "https://excalidraw.com/apple-touch-icon.png"
     }
   ]
 }
